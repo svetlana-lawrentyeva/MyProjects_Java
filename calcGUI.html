@@ -1,0 +1,162 @@
+<html>
+<head>
+<meta charset="utf-8">
+<script language="JavaScript">
+
+var a;
+var b;
+var c;
+var firstNumber=true;
+
+function createWebElement(name, attr, parent)
+{
+   var element = document.createElement(name);
+   if (attr.length > 0)
+	{
+		var array = attr.split("~");
+		for (var i= 0; i<array.length; ++i)
+		{
+			var tattr = array[i].split(",");
+			element.setAttribute(tattr[0], tattr[1]);
+		}
+		if(array[0]=="type,button")
+		{
+			var attrFunction="pressed(this)";
+			element.setAttribute("onclick", attrFunction);
+		}
+	}
+	parent.appendChild(element);
+	return element;
+}
+function init()
+{
+	var buttons=[];
+	var parent=document.getElementById('calc');
+	var textField=createWebElement("input","type,text~value,0~size,17~style,text-align:right~id,textField",parent);
+	var br=createWebElement("br","",parent);
+	var br1=createWebElement("br","",parent);
+	var buttonValue="";
+    var numberCount=1;
+	for(var i=0; i<16; ++i)
+	{
+		switch(i)
+            {
+                case 3:                    
+                    buttonValue="+";
+                    break;
+                case 7:
+                    buttonValue="-";
+                    break;
+                case 11:
+                    buttonValue="*";
+                    break;
+                case 12:
+                    buttonValue="0";
+                    break;
+                case 13:
+                    buttonValue="C";
+                    break;
+                case 14:
+                    buttonValue="=";
+                    break;
+                case 15:
+                    buttonValue="/";
+                    break;
+                default:
+                    buttonValue=""+(numberCount++);
+            }
+		buttons[i]=createWebElement("input","type,button~value,"+buttonValue+"~id,"+buttonValue+"~style,width:50px;",parent);
+		if(i%4==3)
+		{
+			var br2=createWebElement("br","",parent);
+		}
+	}
+}
+function pressed(sender)
+{
+	var textField=document.getElementById("textField");
+var r=sender.value;
+var f=firstNumber;
+	switch(sender.value)
+                    {
+                        case '+':
+                            a=parseInt(textField.value);
+                            c=sender.value;
+                            firstNumber=true;
+                            break;
+                        case '-':
+                            a=parseInt(textField.value);
+                            c=sender.value;
+                            firstNumber=true;
+                            break;
+                        case '*':
+                            a=parseInt(textField.value);
+                            c=sender.value;
+                            firstNumber=true;
+                            break;
+                        case '/':
+                            a=parseInt(textField.value);
+                            c=sender.value;
+                            firstNumber=true;
+                            break;
+                        case '=':
+                            b=parseInt(textField.value);
+                            textField.value=calc(a, b, c);
+                            firstNumber=true;
+                            break;
+                        case 'C':
+                            textField.value="0";
+                            a=0;
+                            b=0;
+                            firstNumber=true;
+                            break;
+                        default:
+                            var prevalue=textField.value;
+                            if(firstNumber)
+                            {
+                                textField.value=sender.value;
+                                firstNumber=false;
+                            }
+                            else
+                            {
+                                textField.value=""+prevalue+sender.value;
+                            }
+                    }
+}
+function calc(a, b, c)
+{
+var result;
+switch(c)
+{
+case "+":
+result=a+b;
+break;
+case "-":
+result=a-b;
+break;
+case "*":
+result=a*b;
+break;
+case "/":
+if(b!=0)
+{
+result=a/b;
+}
+else
+{
+alert("нельзя делить на ноль");
+}
+break;
+default:
+alert("проверьте все значения, где-то ошибка");
+}
+return parseInt(result);
+}
+</script>
+</head>
+<body onload="init()">
+<form name="calc" id="calc">
+
+</form>
+</body>
+</html>

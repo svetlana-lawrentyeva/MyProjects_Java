@@ -1,0 +1,42 @@
+package calc;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        int a=0;
+        int b=0;
+        char c='+';
+        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+        try {
+                ArrayList<Integer> signs=new ArrayList<Integer>();
+                System.out.println("Expression: ");
+                String str=input.readLine();
+                for(int i=0; i<str.length()-1;++i)
+                {
+                    String s=(String) str.subSequence(i, i+1);
+                    if(checkStringIsNumber(s))
+                    {
+                        signs.add(i);
+                    }
+                }
+        } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+        }
+        System.out.println("Result: "+Calc.count(a, b, c));
+    }
+    private static boolean checkStringIsNumber(String string) {
+        try {
+            Integer.parseInt(string);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+}

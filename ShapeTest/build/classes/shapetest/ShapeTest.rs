@@ -1,0 +1,15 @@
+shapetest.RoundRectangleMaker
+shapetest.EllipseMaker
+shapetest.PolygonMaker
+shapetest.RectangleMaker
+shapetest.QuadCurveMaker
+shapetest.ArcMaker
+shapetest.ShapePanel
+shapetest.ShapeTest
+shapetest.LineMaker
+shapetest.ShapeMaker
+shapetest.ShapeTestFrame$1
+shapetest.ShapeTestFrame
+shapetest.ShapePanel$1
+shapetest.CubicCurveMaker
+shapetest.ShapePanel$2

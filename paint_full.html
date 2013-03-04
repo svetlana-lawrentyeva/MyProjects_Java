@@ -1,0 +1,152 @@
+<html>
+<head>
+<meta charset=utf-8>
+<script>
+
+var canvas;
+var down;
+var context;
+var color;
+var line;
+var figure;
+var x;
+var y;
+
+function init()
+{
+	canvas=document.getElementById("myCanvas");
+	canvas.width = document.getElementById("canvasTD").clientWidth;
+	canvas.height = document.getElementById("canvasTD").clientHeight;
+	down=false;
+	context=canvas.getContext("2d");
+
+	canvas.onmousedown=mouseDown;
+	canvas.onmouseup=mouseUp;
+	canvas.onmousemove=mouseMove;
+	
+	color='#ff0000';
+	line=25;
+	figure="draw";
+}
+
+function mouseMove(e)
+{
+	if(down==true && figure=="draw")
+	{
+		context.lineTo(e.clientX,e.clientY);
+		context.stroke();
+	}
+}
+function mouseUp(e)
+{
+	if(figure=="line")
+	{
+		context.lineTo(e.clientX,e.clientY);
+		context.stroke();
+	}
+	if(figure=="square")
+	{
+		var xS=x<e.clientX?x:e.clientX;
+		var yS=y<e.clientY?y:e.clientY;
+		var width=Math.abs(x-e.clientX);
+		var height=Math.abs(y-e.clientY);
+		context.strokeRect(xS,yS,width,height);
+		context.stroke();
+	}
+	if(figure=="cycle")
+	{
+		var xS=x<e.clientX?x:e.clientX;
+		var yS=y<e.clientY?y:e.clientY;
+		var x0=xS+(Math.abs(x-e.clientX)/2);
+		var y0=yS+(Math.abs(y-e.clientY)/2);
+		var radius=Math.sqrt((x0-xS)*(x0-xS)+(y0-yS)*(y0-yS));
+		context.beginPath();
+		context.arc(x0,y0,radius, 0, Math.PI*2, true);
+		context.closePath();
+		context.stroke();
+	}
+	//context.closePath();
+	down=false;
+}
+function mouseDown(e)
+{
+	context.beginPath();
+	context.strokeStyle=color;
+	context.fillStyle=color;
+	context.lineWidth=line;
+	down=true;
+	context.moveTo(e.clientX,e.clientY);
+	x=e.clientX;
+	y=e.clientY;
+}
+function getColor()
+{
+	var red=document.getElementById("red").value;
+	var green=document.getElementById("green").value;
+	var blue=document.getElementById("blue").value;
+	
+	color="#"+toHex(red)+toHex(green)+toHex(blue);
+	
+	setColorBox();
+}
+function setColorBox()
+{
+	var box=document.getElementById("colorBox");
+	box.style.background=color;
+}
+function toHex(N)
+{
+	 if (N==null) return "00";
+	 N=parseInt(N); if (N==0 || isNaN(N)) return "00";
+	 N=Math.max(0,N); N=Math.min(N,255); N=Math.round(N);
+	 return "0123456789ABCDEF".charAt((N-N%16)/16)+"0123456789ABCDEF".charAt(N%16);
+}
+function getLine()
+{
+	line=document.getElementById("line").value;
+	document.getElementById("lineField").value=line;
+}
+function getFigure()
+{
+	var figures=document.getElementsByName("figure");
+	for(var i=0;i<figures.length;++i)
+		{
+			if(figures[i].checked)
+				{
+					figure=figures[i].value;
+				}
+		}
+}
+</script>
+</head>
+<body onLoad="init()">
+<table border="1" width="100%">
+<tr>
+<td colspan="4" id="canvasTD">
+<canvas id="myCanvas" width="900" height="400" style="cursor: crosshair">
+</td>
+</tr>
+<tr>
+<td bgcolor="#ff0000" width="60" id="colorBox">
+</td>
+<td>
+<input type="range" min="0" max="255" step="1" value="255" onchange="getColor()" id="red">красный</br>
+<input type="range" min="0" max="255" step="1" value="0" onchange="getColor()" id="green">зелёный</br>
+<input type="range" min="0" max="255" step="1" value="0" onchange="getColor()" id="blue">синий</br>
+</td>
+<td>
+<input type="range" min="1" max="200" step="1" value="25" onchange="getLine()" id="line"></br>
+<input type="text" value="25" disabled="disabled" size="3" id="lineField">
+</td>
+<td>
+<input type="radio" name="figure" value="draw" onclick="getFigure()" checked>draw</br>
+<input type="radio" name="figure" value="line" onclick="getFigure()">line</br>
+<input type="radio" name="figure" value="square" onclick="getFigure()">square</br>
+<input type="radio" name="figure" value="cycle" onclick="getFigure()">cycle</br>
+</td>
+</tr>
+</table>
+
+</canvas>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ColorTest</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <color name="white">#ffffff</color>
+    <color name="light_red">#ff8080</color>
+    <color name="red">#ff0000</color>
+    <color name="brown">#804040</color>
+    <color name="brown_red">#800000</color>
+    <color name="dark_brown">#400000</color>
+    <color name="black">#000000</color>
+    <color name="light_yellow">#ffff80</color>
+    <color name="yellow">#ffff00</color>
+    <color name="orange_red">#ff8040</color>
+    <color name="orange">#ff8000</color>
+    <color name="orange_brown">#804000</color>
+    <color name="haki">#808000</color>
+    <color name="light_salat">#80ff80</color>
+    <color name="yellow_salat">#80ff00</color>
+    <color name="salat">#00ff00</color>
+    <color name="green">#008000</color>
+    <color name="dark_green">#004000</color>
+    <color name="grey_green">#808040</color>
+    <color name="sea">#008080</color>
+    <color name="mud">#008040</color>
+    <color name="dark_sea">#004040</color>
+    <color name="grey">#808080</color>
+    <color name="sky_blue">#80ffff</color>
+    <color name="grey_blue">#004080</color>
+    <color name="blue">#0000ff</color>
+    <color name="dark_blue">#000080</color>
+    <color name="grey_sky_blue">#408080</color>
+    <color name="dark_sky_blue">#0080ff</color>
+    <color name="blue1">#0000a0</color>
+    <color name="dark_blue1">#000040</color>
+    <color name="light_grey">#c0c0c0</color>
+    <color name="light_siren">#ff80c0</color>
+    <color name="grey_violet">#8080c0</color>
+    <color name="bordo">#800040</color>
+    <color name="violet">#800080</color>
+    <color name="dark_violet">#400040</color>
+    <color name="light_rose">#ff80ff</color>
+    <color name="bright_rose">#ff00ff</color>
+    <color name="red_rose">#ff0080</color>
+    <color name="blu_violet">#8000ff</color>
+    <color name="dark_blue_violet">#400080</color>
+    <color name="salat_sky_blue">#00ff80</color>
+    <color name="blue_salat">#00ff40</color>
+    <color name="light_violet">#8080ff</color>
+    
+
+</resources>

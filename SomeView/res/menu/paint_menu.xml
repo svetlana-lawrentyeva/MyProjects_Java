@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/colors"
+        android:title="@string/colors" />
+    <item android:id="@+id/line_width"
+        android:title="line_width" />
+
+</menu>

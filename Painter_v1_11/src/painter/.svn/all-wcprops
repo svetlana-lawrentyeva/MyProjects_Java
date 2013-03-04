@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter
+END
+ColorPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/ColorPanel.java
+END
+DSFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/DSFactory.java
+END
+DS_TIFF.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/DS_TIFF.java
+END
+IDS.java
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/IDS.java
+END
+FigurePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/FigurePanel.java
+END
+Painter.java
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/Painter.java
+END
+DS_JPG.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/DS_JPG.java
+END
+PaintFrame.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/PaintFrame.java
+END
+LinePanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/LinePanel.java
+END
+DS_PNG.java
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/DS_PNG.java
+END
+PaintPanel.java
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/Painter_v1/src/painter/PaintPanel.java
+END

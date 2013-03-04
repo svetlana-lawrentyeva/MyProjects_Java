@@ -1,0 +1,70 @@
+10
+
+dir
+0
+https://my-projects-java.googlecode.com/svn/trunk/TasksElementary
+https://my-projects-java.googlecode.com/svn
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ba288b61-d346-f1fd-8e61-fa7b93725ebe
+
+build.xml
+file
+
+
+
+add
+
+build
+dir
+
+
+
+add
+
+test
+dir
+
+
+
+add
+
+nbproject
+dir
+
+
+
+add
+
+manifest.mf
+file
+
+
+
+add
+
+src
+dir
+
+
+
+add
+

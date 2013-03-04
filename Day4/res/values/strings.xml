@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Day4</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="red">Красный</string>
+    <string name="yellow">Жёлтый</string>
+    <string name="green">Зелёный</string>
+    <color name="redColor">#FFFF0000</color>
+    <color name="yellowColor">#FFFF00</color>
+    <color name="greenColor">#FF00FF00</color>
+
+</resources>

@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta charset=utf-8>
+<script language="JavaScript">
+function adding(a, b, c)
+{
+var a=parseFloat(document.calc.a.value);
+var b=parseFloat(document.calc.b.value);
+var c=document.calc.c.value;
+var result;
+switch(c)
+{
+case "+":
+result=a+b;
+break;
+case "-":
+result=a-b;
+break;
+case "*":
+result=a*b;
+break;
+case "/":
+if(b!=0)
+{
+result=a/b;
+}
+else
+{
+alert("нельзя делить на ноль");
+}
+break;
+default:
+alert("проверьте все значения, где-то ошибка");
+}
+document.calc.result.value=result;
+}
+
+function1()
+{
+document.calc.is.value=eval(parseFloat(document.calc.a.value)+parseFloat(document.calc.b.value));
+}
+</script>
+</head>
+<body>
+<FORM name="calc">
+<input name="a" type="text" size="4"></br>
+<input name="c" type="text" size="1"></br>
+<input name="b" type="text" size="4"></br>
+<input type="button" value="  =  " onclick="adding(a, b, c)"></br>
+<input name="result" type="text" value="0" size="6">
+</FORM>
+</body>
+</html>
