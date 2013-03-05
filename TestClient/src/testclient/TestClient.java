@@ -19,8 +19,8 @@ public class TestClient
 	{
 		try{
 			//1. creating a socket to connect to the server
-			requestSocket = new Socket(c, 2004);
-			System.out.println("Connected to localhost in port 2004");
+			requestSocket = new Socket("localhost", 9222);
+			System.out.println("Connected to localhost in port 92222");
 			//2. get Input and Output streams
 			out = new ObjectOutputStream(requestSocket.getOutputStream());
 			out.flush();
